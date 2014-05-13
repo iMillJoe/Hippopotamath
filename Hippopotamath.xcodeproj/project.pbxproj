@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60064C5419217E5300E337FD /* IMMutipalChoiceQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = 60064C5319217E5300E337FD /* IMMutipalChoiceQuestion.m */; };
+		60064C6019219C7600E337FD /* IMHippoGameBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 60064C5F19219C7600E337FD /* IMHippoGameBrain.m */; };
 		60D4836F19205EE700287495 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D4836E19205EE700287495 /* Foundation.framework */; };
 		60D4837119205EE700287495 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D4837019205EE700287495 /* CoreGraphics.framework */; };
 		60D4837319205EE700287495 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D4837219205EE700287495 /* UIKit.framework */; };
@@ -15,7 +17,7 @@
 		60D4837F19205EE700287495 /* IMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D4837E19205EE700287495 /* IMAppDelegate.m */; };
 		60D4838219205EE700287495 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60D4838019205EE700287495 /* Main_iPhone.storyboard */; };
 		60D4838519205EE700287495 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60D4838319205EE700287495 /* Main_iPad.storyboard */; };
-		60D4838819205EE700287495 /* IMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D4838719205EE700287495 /* IMViewController.m */; };
+		60D4838819205EE700287495 /* IMHippoGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D4838719205EE700287495 /* IMHippoGameViewController.m */; };
 		60D4838A19205EE700287495 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60D4838919205EE700287495 /* Images.xcassets */; };
 		60D4839119205EE700287495 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D4839019205EE700287495 /* XCTest.framework */; };
 		60D4839219205EE700287495 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60D4836E19205EE700287495 /* Foundation.framework */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		60064C5219217E5300E337FD /* IMMutipalChoiceQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMMutipalChoiceQuestion.h; sourceTree = "<group>"; };
+		60064C5319217E5300E337FD /* IMMutipalChoiceQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMMutipalChoiceQuestion.m; sourceTree = "<group>"; };
+		60064C5E19219C7600E337FD /* IMHippoGameBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMHippoGameBrain.h; sourceTree = "<group>"; };
+		60064C5F19219C7600E337FD /* IMHippoGameBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMHippoGameBrain.m; sourceTree = "<group>"; };
 		60D4836B19205EE700287495 /* Hippopotamath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hippopotamath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D4836E19205EE700287495 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		60D4837019205EE700287495 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -47,8 +53,8 @@
 		60D4837E19205EE700287495 /* IMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMAppDelegate.m; sourceTree = "<group>"; };
 		60D4838119205EE700287495 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		60D4838419205EE700287495 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		60D4838619205EE700287495 /* IMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMViewController.h; sourceTree = "<group>"; };
-		60D4838719205EE700287495 /* IMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMViewController.m; sourceTree = "<group>"; };
+		60D4838619205EE700287495 /* IMHippoGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IMHippoGameViewController.h; sourceTree = "<group>"; };
+		60D4838719205EE700287495 /* IMHippoGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IMHippoGameViewController.m; sourceTree = "<group>"; };
 		60D4838919205EE700287495 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		60D4838F19205EE700287495 /* HippopotamathTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HippopotamathTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D4839019205EE700287495 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -81,6 +87,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60064C5819218AB000E337FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				60064C5E19219C7600E337FD /* IMHippoGameBrain.h */,
+				60064C5F19219C7600E337FD /* IMHippoGameBrain.m */,
+				60064C5219217E5300E337FD /* IMMutipalChoiceQuestion.h */,
+				60064C5319217E5300E337FD /* IMMutipalChoiceQuestion.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		60D4836219205EE700287495 = {
 			isa = PBXGroup;
 			children = (
@@ -118,8 +135,9 @@
 				60D4837E19205EE700287495 /* IMAppDelegate.m */,
 				60D4838019205EE700287495 /* Main_iPhone.storyboard */,
 				60D4838319205EE700287495 /* Main_iPad.storyboard */,
-				60D4838619205EE700287495 /* IMViewController.h */,
-				60D4838719205EE700287495 /* IMViewController.m */,
+				60D4838619205EE700287495 /* IMHippoGameViewController.h */,
+				60D4838719205EE700287495 /* IMHippoGameViewController.m */,
+				60064C5819218AB000E337FD /* Model */,
 				60D4838919205EE700287495 /* Images.xcassets */,
 				60D4837519205EE700287495 /* Supporting Files */,
 			);
@@ -255,8 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				60D4837F19205EE700287495 /* IMAppDelegate.m in Sources */,
+				60064C5419217E5300E337FD /* IMMutipalChoiceQuestion.m in Sources */,
 				60D4837B19205EE700287495 /* main.m in Sources */,
-				60D4838819205EE700287495 /* IMViewController.m in Sources */,
+				60064C6019219C7600E337FD /* IMHippoGameBrain.m in Sources */,
+				60D4838819205EE700287495 /* IMHippoGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +493,7 @@
 				60D483A219205EE700287495 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		60D483A319205EE700287495 /* Build configuration list for PBXNativeTarget "HippopotamathTests" */ = {
 			isa = XCConfigurationList;
@@ -481,6 +502,7 @@
 				60D483A519205EE700287495 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
