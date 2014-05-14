@@ -29,7 +29,7 @@
         IMMutipalChoiceQuestion* three = [[IMMutipalChoiceQuestion alloc] init];
         three.question = @"5 - 3 = ?";
         three.answer = @"2";
-        three.wrongAnswers = [NSMutableArray arrayWithArray: @[@"1", @"8", @"2"]];
+        three.wrongAnswers = [NSMutableArray arrayWithArray: @[@"1", @"8", @"4"]];
         
         IMMutipalChoiceQuestion* four = [[IMMutipalChoiceQuestion alloc] init];
         four.question = @"5 + ? = 8";
@@ -60,11 +60,8 @@
 
 
 -(IMMutipalChoiceQuestion *) pickRandomQuestion
-{
-    srand48([NSDate timeIntervalSinceReferenceDate]);
-    int numberOfQuestions = [self.questionsArray count];
-    
-    int questionIndex = (rand() % numberOfQuestions);
+{    
+    int questionIndex = arc4random() % [self.questionsArray count];
     
     IMMutipalChoiceQuestion* thisQuestion = [self.questionsArray objectAtIndex: questionIndex];
     [self.questionsArray removeObjectAtIndex:questionIndex];
