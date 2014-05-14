@@ -12,23 +12,21 @@
 
 
 
-
+// Private declarations
 @interface IMHippoGameViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *ansButtons;
-
-
-
+@property (weak, nonatomic) IBOutlet UILabel *tempAnsLabel;
 
 @property (strong, nonatomic) IMMutipalChoiceQuestion *currentQuestion;
 @property IMHippoGameBrain* game;
 
 -(void) setupQuestion;
 
-
-
 @end
+
+
 
 @implementation IMHippoGameViewController
 
@@ -76,14 +74,18 @@
 {
     //Feed the hippo
     NSLog(@"Feed the hippo");
+    [self.tempAnsLabel setText:@"Good Job!"];
     [self setupQuestion];
+
 }
 
 - (void) dontFeedHippo
 {
     //Angry Hippo time.
     NSLog(@"Hippo no hungry");
+    [self.tempAnsLabel setText:@"Me not hungry"];
     [self setupQuestion];
+    
 }
 
 - (void)didReceiveMemoryWarning

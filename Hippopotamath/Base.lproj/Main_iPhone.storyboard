@@ -80,11 +80,20 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5I-QE-VBK">
+                                        <rect key="frame" x="140" y="289" width="24" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="Y7Y-VQ-934" secondAttribute="centerY" id="5Kk-ue-Zye"/>
+                                    <constraint firstAttribute="bottom" secondItem="i5I-QE-VBK" secondAttribute="bottom" constant="12" id="5pe-H8-Blh"/>
                                     <constraint firstAttribute="centerX" secondItem="Y7Y-VQ-934" secondAttribute="centerX" id="FZR-V9-6Sh"/>
+                                    <constraint firstAttribute="centerX" secondItem="i5I-QE-VBK" secondAttribute="centerX" id="n1z-7t-pry"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -111,6 +120,7 @@
                     </view>
                     <connections>
                         <outlet property="questionLabel" destination="FxU-d9-KZz" id="rcH-Jv-mZ8"/>
+                        <outlet property="tempAnsLabel" destination="i5I-QE-VBK" id="lRg-qU-95n"/>
                         <outletCollection property="ansButtons" destination="oP8-6M-sN8" id="UWH-ny-ytq"/>
                         <outletCollection property="ansButtons" destination="21o-Q6-wfS" id="fsl-oi-HxS"/>
                         <outletCollection property="ansButtons" destination="TPX-oY-KKF" id="GHM-px-XBK"/>
