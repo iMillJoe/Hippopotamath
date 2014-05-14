@@ -51,9 +51,9 @@
     self.currentQuestion = [self.game pickRandomQuestion];
     self.questionLabel.text = self.currentQuestion.question;
     int correctAnsIndex = arc4random() % [self.ansButtons count];
-    bool peek = NO;
     
     //set button titles
+    bool peek = NO;
     for (int i = 0; i < [self.ansButtons count]; i++) {
         if (i == correctAnsIndex) {
             [[self.ansButtons objectAtIndex:i] setTitle:[self.currentQuestion answer] forState:UIControlStateNormal];
@@ -64,8 +64,6 @@
         }
         else {
             [[self.ansButtons objectAtIndex:i] setTitle:[[self.currentQuestion wrongAnswers] objectAtIndex:i - 1] forState:UIControlStateNormal];
-            
-            
         }
     }
 }
@@ -74,7 +72,7 @@
 {
     //Feed the hippo
     NSLog(@"Feed the hippo");
-    [self.tempAnsLabel setText:@"Good Job!"];
+    [self.tempAnsLabel setText:@"Great Job, I'm very hungry!"];
     [self setupQuestion];
 
 }
@@ -82,8 +80,8 @@
 - (void) dontFeedHippo
 {
     //Angry Hippo time.
-    NSLog(@"Hippo no hungry");
-    [self.tempAnsLabel setText:@"Me not hungry"];
+    NSLog(@"Hippo is not hungry");
+    [self.tempAnsLabel setText:@"I'm not hungry"];
     [self setupQuestion];
     
 }
