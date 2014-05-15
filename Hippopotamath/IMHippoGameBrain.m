@@ -8,6 +8,16 @@
 
 #import "IMHippoGameBrain.h"
 
+@interface IMHippoGameBrain()
+
+@property (readwrite) int score;
+-(IMMutipalChoiceQuestion*) pickRandomQuestion;
+@property (nonatomic, strong) NSMutableArray* questionsArray;
+
+@end
+
+
+
 @implementation IMHippoGameBrain
 
 -(id)init
@@ -22,10 +32,14 @@
     return nil;
 }
 
+- (void) pickNewQuestion
+{
+    self.currentQuestion = [self pickRandomQuestion];
+}
 
 -(IMMutipalChoiceQuestion *) pickRandomQuestion
 {
-    if (![self.questionsArray count] == 0) {
+    if ([self.questionsArray count] == 0) {
         [self setupGame];
     }
     
@@ -37,41 +51,26 @@
     return thisQuestion;
 }
 
+
 - (void) setupGame
 {
     //setup game logic
-    IMMutipalChoiceQuestion* one = [[IMMutipalChoiceQuestion alloc] init];
-    one.question = @"What is CS50";
-    one.answer = @"This! (is CS50)";
-    one.wrongAnswers = [NSMutableArray arrayWithArray: @[@"Nothing is CS50", @"Another wrong answer", @"Yet antoher wrong one"]];
     
-    IMMutipalChoiceQuestion* two = [[IMMutipalChoiceQuestion alloc] init];
-    two.question = @"5 + 5 = ?";
-    two.answer = @"10";
-    two.wrongAnswers = [NSMutableArray arrayWithArray: @[@"9", @"13", @"7"]];
-    
-    IMMutipalChoiceQuestion* three = [[IMMutipalChoiceQuestion alloc] init];
-    three.question = @"5 - 3 = ?";
-    three.answer = @"2";
-    three.wrongAnswers = [NSMutableArray arrayWithArray: @[@"1", @"8", @"4"]];
-    
-    IMMutipalChoiceQuestion* four = [[IMMutipalChoiceQuestion alloc] init];
-    four.question = @"5 + ? = 8";
-    four.answer = @"3";
-    four.wrongAnswers = [NSMutableArray arrayWithArray: @[@"5", @"2", @"7"]];
-    
-    IMMutipalChoiceQuestion* five = [[IMMutipalChoiceQuestion alloc] init];
-    five.question = @"? + 3 = 5";
-    five.answer = @"2";
-    five.wrongAnswers = [NSMutableArray arrayWithArray: @[@"7", @"1", @"3"]];
-    
-    //IMMutipalChoiceQuestion* six = [[IMMutipalChoiceQuestion alloc] init];
-    //IMMutipalChoiceQuestion* seven = [[IMMutipalChoiceQuestion alloc] init];
-    //IMMutipalChoiceQuestion* eight = [[IMMutipalChoiceQuestion alloc] init];
+    // First Grade Questions
+    IMMutipalChoiceQuestion* one =      [[IMMutipalChoiceQuestion alloc] initWithQuestion:@"5 + 7 = ?" answer:@"12" andWrongAnswers:@[@"10", @"13", @"8"]];;
+    IMMutipalChoiceQuestion* two =      [[IMMutipalChoiceQuestion alloc] initWithQuestion:@"5 + 5 = ?" answer:@"10" andWrongAnswers:@[@"9", @"13", @"7"]];
+    IMMutipalChoiceQuestion* three =    [[IMMutipalChoiceQuestion alloc] initWithQuestion:@"5 - 3 = ?" answer:@"2" andWrongAnswers:@[@"1", @"8", @"4"]];
+    IMMutipalChoiceQuestion* four =     [[IMMutipalChoiceQuestion alloc] initWithQuestion:@"5 + ? = 8" answer:@"3" andWrongAnswers:@[@"5", @"2", @"7"]];
+    IMMutipalChoiceQuestion* five =     [[IMMutipalChoiceQuestion alloc] initWithQuestion:@"? + 3 = 5" answer:@"2" andWrongAnswers:@[@"7", @"1", @"3"]];
+    IMMutipalChoiceQuestion* six =      [[IMMutipalChoiceQuestion alloc] initWithQuestion:@"? - 5 = 4" answer:@"9" andWrongAnswers:@[@"12", @"9", @"2"]];
+    IMMutipalChoiceQuestion* seven =    [[IMMutipalChoiceQuestion alloc] initWithQuestion:@"a = 1; b = 2; c = a + b; What is c?" answer:@"3" andWrongAnswers:@[@"4", @"d", @"2"]];
+    IMMutipalChoiceQuestion* eight =    [[IMMutipalChoiceQuestion alloc] initWithQuestion:@"8 + 5 = ?" answer:@"13" andWrongAnswers:@[@"11", @"15", @"9"]];
     //IMMutipalChoiceQuestion* nine = [[IMMutipalChoiceQuestion alloc] init];
     //IMMutipalChoiceQuestion* ten = [[IMMutipalChoiceQuestion alloc] init];
     
-    self.questionsArray = [NSMutableArray arrayWithArray: @[one, two, three, four, five,]];
+    self.questionsArray = [NSMutableArray arrayWithArray: @[one, two, three, four, five, six, seven, eight]];
 }
+
+
 
 @end

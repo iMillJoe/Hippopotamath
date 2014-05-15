@@ -11,10 +11,18 @@
 
 @interface IMHippoGameBrain : NSObject
 
-@property (nonatomic, strong) NSMutableArray* questionsArray;
-@property int score;
+// Properties
+@property (readonly) int score; // the score of the game
+@property (strong, nonatomic) IMMutipalChoiceQuestion* currentQuestion; // the question that should be presented.
 
--(IMMutipalChoiceQuestion*) pickRandomQuestion;
-
-
+// Instance Methods
+- (void) pickNewQuestion; // asks the game to pick a new question (if possable)
 @end
+
+
+/* I have decided that the game should hold the current question, not the view controler presenting it. 
+    The view controller presenting the question should asking be the game if it was answerd correcrtly.
+    The game should then ask the question whether or not it was correctly answerd */
+
+
+

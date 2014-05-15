@@ -12,8 +12,12 @@
 
 @property (nonatomic, copy) NSString* question;
 @property (nonatomic, copy) NSString* answer;
-@property (nonatomic, strong) NSMutableArray* wrongAnswers;
+@property (nonatomic, copy) NSArray* wrongAnswers;
 
+// desiginated init;
+-(id) initWithQuestion:(NSString *)question answer:(NSString *)answer andWrongAnswers:(NSArray *)wrongAnswers;
 
+// determains whether or not a question was correctly answered
+-(BOOL) isAnsweredCorrectlyWithAnswer:(NSString *)answer;
 
 @end

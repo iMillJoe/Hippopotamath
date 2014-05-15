@@ -18,8 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *ansButtons;
 @property (weak, nonatomic) IBOutlet UILabel *tempAnsLabel;
-
-@property (strong, nonatomic) IMMutipalChoiceQuestion *currentQuestion;
 @property IMHippoGameBrain* game;
 
 -(void) setupQuestion;
@@ -33,6 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view, typically from a nib.
     if (!self.game) {
         self.game = [[IMHippoGameBrain alloc] init];
@@ -42,35 +41,35 @@
 
 - (IBAction)ansButtonPressed:(id)sender;
 {
-    if ([[sender currentTitle] isEqualToString: self.currentQuestion.answer]) [self feedHippo];
+    if ([self.game.currentQuestion isAnsweredCorrectlyWithAnswer:[sender currentTitle] ]) [self feedHippo];
     else [self dontFeedHippo];
 }
 
 -(void) setupQuestion;
 {
-    self.currentQuestion = [self.game pickRandomQuestion];
-    self.questionLabel.text = self.currentQuestion.question;
+    [self.game pickNewQuestion];
+    self.questionLabel.text = self.game.currentQuestion.question;
     int correctAnsIndex = arc4random() % [self.ansButtons count];
     
-    //set button titles
+    // set button titles
     bool peek = NO;
     for (int i = 0; i < [self.ansButtons count]; i++) {
         if (i == correctAnsIndex) {
-            [[self.ansButtons objectAtIndex:i] setTitle:[self.currentQuestion answer] forState:UIControlStateNormal];
+            [[self.ansButtons objectAtIndex:i] setTitle:[self.game.currentQuestion answer] forState:UIControlStateNormal];
             peek = YES;
         }
         else if (!peek) {
-            [[self.ansButtons objectAtIndex:i] setTitle:[[self.currentQuestion wrongAnswers] objectAtIndex:i] forState:UIControlStateNormal];
+            [[self.ansButtons objectAtIndex:i] setTitle:[[self.game.currentQuestion wrongAnswers] objectAtIndex:i] forState:UIControlStateNormal];
         }
         else {
-            [[self.ansButtons objectAtIndex:i] setTitle:[[self.currentQuestion wrongAnswers] objectAtIndex:i - 1] forState:UIControlStateNormal];
+            [[self.ansButtons objectAtIndex:i] setTitle:[[self.game.currentQuestion wrongAnswers] objectAtIndex:i - 1] forState:UIControlStateNormal];
         }
     }
 }
 
 - (void) feedHippo
 {
-    //Feed the hippo
+    // Feed the hippo
     NSLog(@"Feed the hippo");
     [self.tempAnsLabel setText:@"Great Job, I'm very hungry!"];
     [self setupQuestion];
@@ -79,9 +78,9 @@
 
 - (void) dontFeedHippo
 {
-    //Angry Hippo time.
+    // Angry Hippo time.
     NSLog(@"Hippo is not hungry");
-    [self.tempAnsLabel setText:@"I'm not hungry"];
+    [self.tempAnsLabel setText:@"I'm not so hungry right now"];
     [self setupQuestion];
     
 }
