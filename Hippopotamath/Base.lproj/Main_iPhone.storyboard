@@ -87,13 +87,30 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWn-Y4-EC8">
+                                        <rect key="frame" x="8" y="8" width="64" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade: 100%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iND-cs-88A">
+                                        <rect key="frame" x="193" y="8" width="103" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="Y7Y-VQ-934" secondAttribute="centerY" id="5Kk-ue-Zye"/>
                                     <constraint firstAttribute="bottom" secondItem="i5I-QE-VBK" secondAttribute="bottom" constant="12" id="5pe-H8-Blh"/>
                                     <constraint firstAttribute="centerX" secondItem="Y7Y-VQ-934" secondAttribute="centerX" id="FZR-V9-6Sh"/>
+                                    <constraint firstAttribute="trailing" secondItem="iND-cs-88A" secondAttribute="trailing" constant="8" id="Gez-ap-fpV"/>
+                                    <constraint firstItem="xWn-Y4-EC8" firstAttribute="leading" secondItem="r9r-6U-gZX" secondAttribute="leading" constant="8" id="JcI-0T-Sz5"/>
+                                    <constraint firstItem="xWn-Y4-EC8" firstAttribute="top" secondItem="r9r-6U-gZX" secondAttribute="top" constant="8" id="YMC-4u-7pU"/>
                                     <constraint firstAttribute="centerX" secondItem="i5I-QE-VBK" secondAttribute="centerX" id="n1z-7t-pry"/>
+                                    <constraint firstItem="iND-cs-88A" firstAttribute="top" secondItem="r9r-6U-gZX" secondAttribute="top" constant="8" id="yd3-Gc-seV"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -119,7 +136,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="gradeLabel" destination="iND-cs-88A" id="N3i-8c-IW0"/>
                         <outlet property="questionLabel" destination="FxU-d9-KZz" id="rcH-Jv-mZ8"/>
+                        <outlet property="scoreLabel" destination="xWn-Y4-EC8" id="X7c-N8-hhJ"/>
                         <outlet property="tempAnsLabel" destination="i5I-QE-VBK" id="lRg-qU-95n"/>
                         <outletCollection property="ansButtons" destination="oP8-6M-sN8" id="UWH-ny-ytq"/>
                         <outletCollection property="ansButtons" destination="21o-Q6-wfS" id="fsl-oi-HxS"/>
@@ -129,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4" y="142"/>
+            <point key="canvasLocation" x="-126" y="73"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

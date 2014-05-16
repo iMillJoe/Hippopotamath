@@ -15,10 +15,12 @@
 // Private declarations
 @interface IMHippoGameViewController ()
 
+@property IMHippoGameBrain* game;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *ansButtons;
 @property (weak, nonatomic) IBOutlet UILabel *tempAnsLabel;
-@property IMHippoGameBrain* game;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *gradeLabel;
 
 -(void) setupQuestion;
 
@@ -41,7 +43,7 @@
 
 - (IBAction)ansButtonPressed:(id)sender;
 {
-    if ([self.game.currentQuestion isAnsweredCorrectlyWithAnswer:[sender currentTitle] ]) [self feedHippo];
+    if ([self.game currentQuestionIsAnsweredCorrectlyWithAnswer:[sender currentTitle] ]) [self feedHippo];
     else [self dontFeedHippo];
 }
 
@@ -65,6 +67,9 @@
             [[self.ansButtons objectAtIndex:i] setTitle:[[self.game.currentQuestion wrongAnswers] objectAtIndex:i - 1] forState:UIControlStateNormal];
         }
     }
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %i", self.game.score];
+    self.gradeLabel.text = [NSString stringWithFormat:@"Grade: %i%%", self.game.grade];
+    
 }
 
 - (void) feedHippo

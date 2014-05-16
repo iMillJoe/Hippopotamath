@@ -12,7 +12,7 @@
 
 -(id) init
 {
-    [NSException raise:@"IMMutipalChoiceQuestion wrong init" format:@"use initWithQuestion: answer: andWrongAnswer"];
+    [NSException raise:@"IMMutipalChoiceQuestion wrong init" format:@"use initWithQuestion: answer: andWrongAnswers"];
     
     return nil;
 }
