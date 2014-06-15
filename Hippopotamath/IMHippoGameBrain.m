@@ -2,9 +2,23 @@
 //  IMHippoGameBrain.m
 //  Hippopotamath
 //
-//  Created by Joe Million on 5/12/14.
-//  Copyright (c) 2014 iMillIndustries. All rights reserved.
-//
+/* Hippopotamath, an educational mulitpal choice math game for kids.
+ 
+ Copyright (C) 2014  iMill Industries
+ 
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with this program. (in IMAppDelegate.h) If not, see <http://www.gnu.org/licenses/>.
+ */
 
 #import "IMHippoGameBrain.h"
 
@@ -76,10 +90,12 @@
     IMMutipalChoiceQuestion* six =      [[IMMutipalChoiceQuestion alloc] initWithQuestion:@"? - 5 = 4" answer:@"9" andWrongAnswers:@[@"12", @"10", @"2"]];
     IMMutipalChoiceQuestion* seven =    [[IMMutipalChoiceQuestion alloc] initWithQuestion:@"a = 1; b = 2; c = a + b; What is c?" answer:@"3" andWrongAnswers:@[@"4", @"d", @"2"]];
     IMMutipalChoiceQuestion* eight =    [[IMMutipalChoiceQuestion alloc] initWithQuestion:@"8 + 5 = ?" answer:@"13" andWrongAnswers:@[@"11", @"15", @"9"]];
+    IMMutipalChoiceQuestion* nine =     [[IMMutipalChoiceQuestion alloc] initWithQuestion:@"5 - 3 = ?" answer:@"2" andWrongAnswers:@[@"10", @"13", @"8"]];
+    IMMutipalChoiceQuestion* ten =      [[IMMutipalChoiceQuestion alloc] initWithQuestion:@"5 + 3 = ?" answer:@"8" andWrongAnswers:@[@"9", @"13", @"12"]];
     //IMMutipalChoiceQuestion* nine = [[IMMutipalChoiceQuestion alloc] init];
     //IMMutipalChoiceQuestion* ten = [[IMMutipalChoiceQuestion alloc] init];
     
-    self.questionsArray = [NSMutableArray arrayWithArray: @[one, two, three, four, five, six, seven, eight]];
+    self.questionsArray = [NSMutableArray arrayWithArray: @[one, two, three, four, five, six, seven, eight, nine, ten]];
     
     
     /* AFTER THE USER DOES WELL ENOUGH THAT THEY SHOULD PASS ON TO THE NEXT 'GRADE'
