@@ -7,3 +7,5 @@ An educational math game for kids.
 When the child gets a question right, the hippo eats the answer, and his belly gets bigger.
 When the child does not get a question right, the hippo isn't hungry. 
 
+
+In it's current form the app serves well any multipal choice question. 
